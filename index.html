@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labone Castleside — Marketing Questionnaire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Heebo:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 400;
+            color: #333;
+            background: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #07133D;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .header p {
+            color: #FEC404;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .intro {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #FEC404;
+        }
+
+        .intro h2 {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 600;
+            color: #07133D;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .intro ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .intro ul li { margin-bottom: 0.3rem; }
+
+        .section-label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #07133D;
+            font-size: 1.1rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #FEC404;
+        }
+
+        .question-block {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-block label {
+            display: block;
+            font-family: 'Heebo', sans-serif;
+            font-weight: 600;
+            color: #07133D;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .question-block .hint {
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.6rem;
+            font-style: italic;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #FEC404;
+            box-shadow: 0 0 0 3px rgba(254, 196, 4, 0.15);
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 0.7rem 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Heebo', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            outline: none;
+            border-color: #FEC404;
+            box-shadow: 0 0 0 3px rgba(254, 196, 4, 0.15);
+        }
+
+        .submit-area {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #07133D;
+            background: #FEC404;
+            border: none;
+            padding: 0.9rem 3rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background: #e5b004;
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .footer a { color: #07133D; }
+
+        /* Success state */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .success-message h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #07133D;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p { color: #555; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Labone Castleside</h1>
+        <p>Marketing Questionnaire</p>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Before you start</h2>
+            <p>This is a short questionnaire to help me understand Labone Castleside from your perspective. There are no right or wrong answers — I want to hear how <strong>you</strong> see things, in your own words.</p>
+            <ul>
+                <li>Please fill this in on your own, not together with anyone else</li>
+                <li>Write however you'd normally talk — don't worry about making it sound polished</li>
+                <li>If you'd rather talk than type, just write "voice note sent" and send me a recording instead</li>
+                <li>Takes about 15-20 minutes</li>
+            </ul>
+        </div>
+
+        <form action="https://automate.blackandwhiteboy.com/webhook/client-intake" method="POST" id="questionnaire">
+
+            <!-- Identity -->
+            <div class="question-block">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+
+            <div class="question-block">
+                <label for="role">Your role at Labone Castleside</label>
+                <input type="text" id="role" name="Role" required>
+            </div>
+
+            <!-- Section 1: The Company -->
+            <div class="section-label">How You See the Company</div>
+
+            <div class="question-block">
+                <label for="q1">How would you describe what Labone Castleside does to someone who's never heard of you?</label>
+                <span class="hint">Imagine you're at a networking event and someone asks "so what do you do?" — just say it naturally.</span>
+                <textarea id="q1" name="Q1 - Describe Labone Castleside"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q2">What makes Labone Castleside different from other injection moulders?</label>
+                <span class="hint">Think about what you'd say to someone choosing between you and a competitor.</span>
+                <textarea id="q2" name="Q2 - What makes you different"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q3">When someone visits the factory for the first time, what do they usually say? What surprises them?</label>
+                <textarea id="q3" name="Q3 - Factory visitor reactions"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q4">What are you most proud of about the company?</label>
+                <textarea id="q4" name="Q4 - Most proud of"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q5">If you had to pick three words to describe Labone Castleside, what would they be?</label>
+                <input type="text" id="q5" name="Q5 - Three words">
+            </div>
+
+            <!-- Section 2: Customers and Markets -->
+            <div class="section-label">Customers and Markets</div>
+
+            <div class="question-block">
+                <label for="q6">Who are your best customers right now? What makes them good to work with?</label>
+                <span class="hint">Don't need to name names if you'd rather not — just describe the type of company and why the relationship works.</span>
+                <textarea id="q6" name="Q6 - Best customers"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q7">What type of company would you love to work with but haven't yet?</label>
+                <span class="hint">Dream customer — what industry, what size, what kind of work?</span>
+                <textarea id="q7" name="Q7 - Dream customer"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q8">When you lose a prospect or they go elsewhere, why does that usually happen?</label>
+                <textarea id="q8" name="Q8 - Why prospects go elsewhere"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q9">What industries outside automotive do you think would benefit most from what Labone does?</label>
+                <span class="hint">Based on your experience — which sectors need this kind of quality but might not know you exist?</span>
+                <textarea id="q9" name="Q9 - Industries outside automotive"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q10">What questions do prospects typically ask before they place an order?</label>
+                <span class="hint">Think about the conversations you have during the quoting/sales process.</span>
+                <textarea id="q10" name="Q10 - Prospect questions"></textarea>
+            </div>
+
+            <!-- Section 3: Industry and Knowledge -->
+            <div class="section-label">Your Industry Knowledge</div>
+
+            <div class="question-block">
+                <label for="q11">What's changing in your industry right now that people outside it should know about?</label>
+                <textarea id="q11" name="Q11 - Industry changes"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q12">What do most people get wrong about injection moulding?</label>
+                <span class="hint">Common misconceptions, things that frustrate you when people don't understand.</span>
+                <textarea id="q12" name="Q12 - Common misconceptions"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q13">What's the biggest challenge facing UK manufacturing right now?</label>
+                <textarea id="q13" name="Q13 - Biggest challenge UK manufacturing"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q14">What trends are you seeing in your supply chain or from your customers?</label>
+                <textarea id="q14" name="Q14 - Supply chain trends"></textarea>
+            </div>
+
+            <!-- Section 4: Looking Forward -->
+            <div class="section-label">Looking Forward</div>
+
+            <div class="question-block">
+                <label for="q15">Where do you see the company in 3-5 years?</label>
+                <textarea id="q15" name="Q15 - Company in 3-5 years"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q16">If you could change one thing about how Labone Castleside markets itself, what would it be?</label>
+                <textarea id="q16" name="Q16 - One thing to change about marketing"></textarea>
+            </div>
+
+            <div class="question-block">
+                <label for="q17">Is there anything else you think I should know? Anything we haven't covered?</label>
+                <span class="hint">Anything at all — about the company, the industry, or what you'd like to see happen.</span>
+                <textarea id="q17" name="Q17 - Anything else"></textarea>
+            </div>
+
+            <div class="submit-area">
+                <button type="submit" class="submit-btn">Send My Answers</button>
+            </div>
+        </form>
+
+        <div class="success-message" id="success">
+            <h2>Cheers, got it!</h2>
+            <p>Your answers have been sent through to Paul. Really appreciate you taking the time.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Prepared by <a href="https://blackandwhiteboy.com">Black And White Boy</a> for Labone Castleside</p>
+    </div>
+
+    <script>
+        // Show success message after redirect back (if using _next)
+        if (window.location.search.includes('submitted=true')) {
+            document.getElementById('questionnaire').style.display = 'none';
+            document.getElementById('success').style.display = 'block';
+            document.querySelector('.intro').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
